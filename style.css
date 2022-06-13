@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 1rem;
+    margin: 4rem;
+    padding: 0;
+}
+
+.textbox {
+    height: 50px;
+    font-size: medium;
+}
+
+button {
+    padding: 1rem;
+    background-color: transparent;
+    outline: none;
+    border-radius: 25%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: plum;
+}
+
+.highlight {
+    color: cornflowerblue;
+}
+
+.error {
+    background-color: beige;
+    border: red;
+}
