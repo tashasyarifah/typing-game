@@ -22,6 +22,7 @@ const typedValueElement = document.getElementById("typed-value");
 
 document.getElementById("start").addEventListener("click", () => {
   const quoteIndex = Math.floor(Math.random() * quotes.length);
+
   const quote = quotes[quoteIndex];
 
   words = quote.split(" ");
@@ -31,7 +32,7 @@ document.getElementById("start").addEventListener("click", () => {
   const spanWords = words.map(function (word) {
     return `<span>${word} </span>`;
   });
-  quoteElement.innerHTML = spanWords.join(" ");
+  quoteElement.innerHTML = spanWords.join("");
   quoteElement.childNodes[0].className = "highlight";
   messageElement.innerText = " ";
 
@@ -39,4 +40,33 @@ document.getElementById("start").addEventListener("click", () => {
   typedValueElement.focus();
 
   startTime = new Date().getTime();
+});
+
+typedValueElement.addEventListener("input", () => {
+  const currentWord = words[wordIndex];
+  const typedValue = typedValueElement.value;
+
+  if (typedValue === currentWord && wordIndex === words.length - 1) {
+    const elapsedTime = new Date().getTime() - startTime;
+
+    const message = ` Congratulations! You finished in ${
+      elapsedTime / 1000
+    } seconds. `;
+
+    messageElement.innerText = message;
+  } else if (typedValue.endsWith(" ") && typedValue.trim() === currentWord) {
+    typedValueElement.value = "";
+
+    wordIndex++;
+
+    for (const wordElememt of quoteElement.childNodes) {
+      wordElememt.className = "";
+    }
+
+    quoteElement.childNodes[wordIndex].className = "highlight";
+  } else if (currentWord.startswith(typedValue)) {
+    typedValueElement.className = "";
+  } else {
+    typedValueElement.className = "error";
+  }
 });
