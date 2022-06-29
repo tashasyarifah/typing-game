@@ -64,7 +64,7 @@ typedValueElement.addEventListener("input", () => {
     }
 
     quoteElement.childNodes[wordIndex].className = "highlight";
-  } else if (currentWord.startswith(typedValue)) {
+  } else if (currentWord.startsWith(typedValue)) {
     typedValueElement.className = "";
   } else {
     typedValueElement.className = "error";

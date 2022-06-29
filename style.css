@@ -5,12 +5,16 @@
 }
 
 body {
-    display: grid;
-    place-content: center;
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-size: 1rem;
-    margin: 0;
+    margin: 0 auto;
+    background-color: rgb(152, 152, 238);
+    display: grid;
+    place-content: center;
+    max-width: 60rem;
+    padding: 3rem 1.5rem;
 }
+
 
 h1, p {
     margin: 0;
@@ -20,23 +24,39 @@ p {
     font-size: 1.5rem;
 }
 
+header {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+
 .container {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1ch;
-    border: 2px solid sandybrown;
+    border: 5px solid sandybrown;
     padding: 5rem;
     margin-inline: auto;
+    border-bottom-right-radius: 7%;
+    border-bottom-left-radius: 7%;
+    background-color: aliceblue;
 }
 
-.textbox {
-    height: 50px;
-    font-size: 1.5rem;
+
+input {
+    height: 3rem;
+    font-size: 1.25rem;
 }
 
-button {
+.button {
     display: inline;
     padding: 1rem;
     background-color: transparent;
@@ -46,7 +66,7 @@ button {
     font-size: 1.5rem;
 }
 
-button:hover {
+.button:hover {
     background-color: plum;
 }
 
@@ -56,5 +76,11 @@ button:hover {
 
 .error {
     background-color: beige;
-    border: red;
+    color: red;
+}
+
+footer {
+    font-size: medium;
+    text-align: center;
+    padding-top: 1rem;
 }
