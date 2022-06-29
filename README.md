@@ -16,4 +16,4 @@ It's fun to make. A lots of thing need to be considerate. Start small first. Mak
 
 #### Note to Myself
 
-- [ ] Level up styles
+- [x] Level up styles
